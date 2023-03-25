@@ -1,4 +1,4 @@
-package io.github.ropereralk.kelani.mapper.util;
+package io.github.ropereralk.kelani.mapper.util.constants;
 
 public class Constants {
 

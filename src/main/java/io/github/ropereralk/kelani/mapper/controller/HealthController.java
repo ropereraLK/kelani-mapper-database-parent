@@ -1,11 +1,15 @@
 package io.github.ropereralk.kelani.mapper.controller;
 
 import io.github.ropereralk.kelani.mapper.beanCreation.PayRoll;
+import io.github.ropereralk.kelani.mapper.util.constants.enums.Collections;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import static io.github.ropereralk.kelani.mapper.util.constants.CollectionsC.ORDER_SERVICE;
+import static io.github.ropereralk.kelani.mapper.util.constants.enums.Collections.valueOfNameByCache;
 
 @RestController
 public class HealthController {
@@ -21,7 +25,7 @@ public class HealthController {
 
 
 
-//        JSONObject js = new JSONObject();
+        //        JSONObject js = new JSONObject();
 //        JSONParser parser = new JSONParser();
 //        JSONObject jsonObject = (JSONObject) parser.parse(TEST_DOCUMENT);
 //        mongoTemplate.insert(jsonObject,"Love");

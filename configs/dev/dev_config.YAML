@@ -1,0 +1,16 @@
+kelani:
+  mapper:
+    collections:
+      - collectionName: order
+        notNullValues:
+          - internal.id
+          - external.id
+        nullValues:
+          - _id
+      - collectionName: order
+        notNullValues:
+          - internal.id
+          - external.id
+          - internal.secondaryId
+        nullValues:
+          - _id
