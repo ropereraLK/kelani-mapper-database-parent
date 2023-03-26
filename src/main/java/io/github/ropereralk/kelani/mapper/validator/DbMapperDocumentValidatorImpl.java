@@ -1,12 +1,13 @@
 package io.github.ropereralk.kelani.mapper.validator;
 
+import io.github.ropereralk.kelani.mapper.beanCreation.ConfigurationManager;
 import io.github.ropereralk.kelani.mapper.exceptions.MapperValidationException;
 import org.json.simple.JSONObject;
 
-class DbMapperDocumentValidatorImpl implements DocumentValidator {
+class DbMapperDocumentValidatorImpl extends DocumentValidatorImpl {
 
     @Override
-    public boolean validate(JSONObject document) {
+    public boolean validateDocument(JSONObject document, ConfigurationManager configurationManager) {
         validateInternalId(document);
         validateExternalId(document);
 

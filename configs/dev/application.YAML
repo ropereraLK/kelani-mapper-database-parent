@@ -1,0 +1,18 @@
+kelani:
+  mapper:
+    name : rope
+    collections:
+      order:
+        name: order
+        notNullValues:
+          - "internal.id"
+          - "external.id"
+          - "internal.secondaryId"
+        nullValues: _id
+      customerOrder:
+        name: order
+        notNullValues:
+          - "internal.id"
+          - "external.id"
+          - "internal.secondaryId"
+        nullValues: _id

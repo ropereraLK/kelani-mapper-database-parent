@@ -1,18 +1,32 @@
 package io.github.ropereralk.kelani.mapper.beanCreation;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import io.github.ropereralk.kelani.mapper.dto.CollectionPropertiesDTO;
+import org.json.simple.JSONObject;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Properties;
 
 @Configuration
-public class ConfigurationManager {
+@ConfigurationProperties("kelani.mapper.collections")
+public class ConfigurationManager extends Properties {
 
-    private final HashMap<String,String> collectionList = new HashMap<>();
 
-    public  HashMap<String,String> getCollectionList(){
-        return collectionList;
+
+
+  //  @Value("${kelani.mapper.collections}")
+    private ArrayList<JSONObject> collections;
+
+
+    public  ArrayList< JSONObject> getCollectionList(){
+        return collections;
     }
+
+    public void setCollectionList(ArrayList<JSONObject> collections) {
+        this.collections = collections;
+    }
+
+
 }

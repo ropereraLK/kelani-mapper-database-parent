@@ -1,21 +1,24 @@
 package io.github.ropereralk.kelani.mapper.validator;
 
+import io.github.ropereralk.kelani.mapper.beanCreation.ConfigurationManager;
+import io.github.ropereralk.kelani.mapper.dto.CollectionPropertiesDTO;
+import io.github.ropereralk.kelani.mapper.exceptions.MapperValidationException;
 import io.github.ropereralk.kelani.mapper.util.constants.CollectionsC;
 import org.json.simple.JSONObject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class DocumentValidatorFactoryImpl implements DocumentValidatorFactory{
+    @Autowired
+    ConfigurationManager configurationManager;
 
-    @Override
-    public void validateCollection(String collection) {
+  @Override
+    public boolean validateDocument(String collection, JSONObject document) throws Exception {
 
-    }
-
-    @Override
-    public boolean validateDocument(String collection, JSONObject document) {
         DocumentValidator documentValidator = getDocumentType(collection);
+        documentValidator.validateCollection(collection);
+        documentValidator.validateDocument(document, configurationManager);
 
-        return documentValidator.validate(document);
+        return true;
     }
 
     private DocumentValidator getDocumentType(String collection){
@@ -30,6 +33,11 @@ public class DocumentValidatorFactoryImpl implements DocumentValidatorFactory{
         default:
             return new DbMapperDocumentValidatorImpl();
         }
+    }
+
+    private CollectionPropertiesDTO getCollectionProperties(String collection,ConfigurationManager configurationManager){
+        configurationManager.getCollectionList();
+        return null;
     }
 
 

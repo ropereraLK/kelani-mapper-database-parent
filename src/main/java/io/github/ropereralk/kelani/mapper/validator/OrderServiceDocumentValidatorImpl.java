@@ -1,10 +1,11 @@
 package io.github.ropereralk.kelani.mapper.validator;
 
+import io.github.ropereralk.kelani.mapper.beanCreation.ConfigurationManager;
 import org.json.simple.JSONObject;
 
-public class OrderServiceDocumentValidatorImpl implements DocumentValidator {
+public class OrderServiceDocumentValidatorImpl extends DocumentValidatorImpl {
     @Override
-    public boolean validate(JSONObject document) {
+    public boolean validateDocument(JSONObject document, ConfigurationManager configurationManager) {
         return false;
     }
 }
