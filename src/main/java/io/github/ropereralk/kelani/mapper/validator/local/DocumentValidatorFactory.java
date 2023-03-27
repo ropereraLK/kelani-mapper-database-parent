@@ -1,4 +1,4 @@
-package io.github.ropereralk.kelani.mapper.validator;
+package io.github.ropereralk.kelani.mapper.validator.local;
 
 
 import org.json.simple.JSONObject;

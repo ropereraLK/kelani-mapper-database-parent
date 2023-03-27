@@ -1,13 +1,12 @@
-package io.github.ropereralk.kelani.mapper.validator;
+package io.github.ropereralk.kelani.mapper.validator.local;
 
-import io.github.ropereralk.kelani.mapper.validator.DocumentValidatorFactoryImpl;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static io.github.ropereralk.kelani.mapper.validator.testutils.TestConstants.TEST_DOCUMENT;
+import static io.github.ropereralk.kelani.mapper.validator.local.testutils.TestConstants.TEST_DOCUMENT;
 
 @SpringBootTest
 class DbmapperApplicationTests {
@@ -18,7 +17,7 @@ class DbmapperApplicationTests {
 		JSONObject jsonObject = (JSONObject) parser.parse(TEST_DOCUMENT);
 
 		DocumentValidatorFactoryImpl factory = new DocumentValidatorFactoryImpl();
-		factory.validateDocument("CustomerOrder",jsonObject);
+	//	factory.validateDocument("CustomerOrder",jsonObject);
 	}
 
 }

@@ -1,10 +1,13 @@
-package io.github.ropereralk.kelani.mapper.validator;
+package io.github.ropereralk.kelani.mapper.validator.local;
 
 import io.github.ropereralk.kelani.mapper.beanCreation.ConfigurationManager;
 import io.github.ropereralk.kelani.mapper.exceptions.MapperValidationException;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public abstract class DocumentValidatorImpl implements DocumentValidator {
     @Autowired
     ConfigurationManager configurationManager;

@@ -10,7 +10,7 @@ import org.json.simple.JSONObject;
  */
 public interface DbMapper {
 
-    public String createOne( String collection,JSONObject document);
+    public String createOne( String collection,JSONObject document) throws Exception;
 
     public String findOneAndUpdate(JSONObject document, String collection);
 

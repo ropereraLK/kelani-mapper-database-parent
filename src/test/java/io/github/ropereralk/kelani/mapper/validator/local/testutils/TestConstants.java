@@ -1,4 +1,4 @@
-package io.github.ropereralk.kelani.mapper.validator.testutils;
+package io.github.ropereralk.kelani.mapper.validator.local.testutils;
 
 public class TestConstants {
 

@@ -1,6 +1,6 @@
-package io.github.ropereralk.kelani.mapper.validator;
+package io.github.ropereralk.kelani.mapper.validator.local;
 
-import io.github.ropereralk.kelani.mapper.validator.testutils.TestConstants;
+import io.github.ropereralk.kelani.mapper.validator.local.testutils.TestConstants;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

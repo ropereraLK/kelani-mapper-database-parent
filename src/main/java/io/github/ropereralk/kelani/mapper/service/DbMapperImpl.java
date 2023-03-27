@@ -1,7 +1,7 @@
 package io.github.ropereralk.kelani.mapper.service;
 
-import io.github.ropereralk.kelani.mapper.validator.DocumentValidatorFactory;
-import io.github.ropereralk.kelani.mapper.validator.DocumentValidatorFactoryImpl;
+import io.github.ropereralk.kelani.mapper.validator.local.DocumentValidatorFactory;
+import io.github.ropereralk.kelani.mapper.validator.local.DocumentValidatorFactoryImpl;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class DbMapperImpl implements DbMapper {
 
     @Override
-    public String createOne(String collection, JSONObject document) {
+    public String createOne(String collection, JSONObject document) throws Exception {
         // First Validate the JsonObject
         DocumentValidatorFactory documentValidatorFactory = new DocumentValidatorFactoryImpl();
         documentValidatorFactory.validateDocument(collection,document);

@@ -10,7 +10,7 @@ kelani:
           - "internal.secondaryId"
         nullValues: _id
       customerOrder:
-        name: order
+        name: customerOrder
         notNullValues:
           - "internal.id"
           - "external.id"

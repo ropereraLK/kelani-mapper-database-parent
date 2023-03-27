@@ -1,4 +1,4 @@
-package io.github.ropereralk.kelani.mapper.validator;
+package io.github.ropereralk.kelani.mapper.validator.local;
 
 import io.github.ropereralk.kelani.mapper.beanCreation.ConfigurationManager;
 import io.github.ropereralk.kelani.mapper.dto.CollectionPropertiesDTO;
