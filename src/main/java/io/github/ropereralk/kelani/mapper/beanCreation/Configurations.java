@@ -14,21 +14,21 @@ public class Configurations {
         return new Employee("ABC",8);
     }
 
-    @Bean
-    public PayRoll createPayRolleBean(){
-        return new PayRoll(createEmployeeBean());
-    }
+//    @Bean
+//    public PayRoll createPayRolleBean(){
+//        return new PayRoll(createEmployeeBean());
+//    }
 
-    @Bean
-    public ConfigurationManager cm(){
-        return new ConfigurationManager();
-    }
+//    @Bean
+//    public ConfigurationManager cm(){
+//        return new ConfigurationManager();
+//    }
 
-    @Bean
+   // @Bean
 
-    public DocumentValidator getDocumentValidator(){
-        return new OrderServiceDocumentValidatorImpl();
-    }
+//    public DocumentValidator getDocumentValidator(){
+//        return new OrderServiceDocumentValidatorImpl();
+//    }
 
 
 }

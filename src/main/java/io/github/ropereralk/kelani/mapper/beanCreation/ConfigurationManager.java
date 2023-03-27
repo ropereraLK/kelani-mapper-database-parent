@@ -20,7 +20,7 @@ public class ConfigurationManager extends Properties {
 
 
   //  @Value("${kelani.mapper.collections}")
-    //private ArrayList<JSONObject> collections;
+    private ArrayList<JSONObject> collections;
 
 
 

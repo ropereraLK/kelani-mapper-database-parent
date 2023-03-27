@@ -5,6 +5,8 @@ import io.github.ropereralk.kelani.mapper.beanCreation.PayRoll;
 import io.github.ropereralk.kelani.mapper.service.DbMapper;
 import io.github.ropereralk.kelani.mapper.service.DbMapperImpl;
 import io.github.ropereralk.kelani.mapper.util.constants.enums.Collections;
+import io.github.ropereralk.kelani.mapper.validator.local.CustomerOrderDocumentValidatorImpl;
+import io.github.ropereralk.kelani.mapper.validator.local.OrderServiceDocumentValidatorImpl;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -27,6 +29,10 @@ public class HealthController {
     //private PayRoll payRoll;
     @Autowired
     DbMapper dbMapper;
+
+
+    @Autowired OrderServiceDocumentValidatorImpl orderServiceDocumentValidatorImpl;
+    @Autowired CustomerOrderDocumentValidatorImpl customerOrderDocumentValidatorImpl;
     @GetMapping("/health")
     public String getHealth () throws Exception {
        // configurationManager.getCollectionList();

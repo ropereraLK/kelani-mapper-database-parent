@@ -1,17 +1,25 @@
 package io.github.ropereralk.kelani.mapper.service;
 
+import io.github.ropereralk.kelani.mapper.beanCreation.ConfigurationManager;
+import io.github.ropereralk.kelani.mapper.validator.local.CustomerOrderDocumentValidatorImpl;
 import io.github.ropereralk.kelani.mapper.validator.local.DocumentValidatorFactory;
 import io.github.ropereralk.kelani.mapper.validator.local.DocumentValidatorFactoryImpl;
+import io.github.ropereralk.kelani.mapper.validator.local.OrderServiceDocumentValidatorImpl;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DbMapperImpl implements DbMapper {
-
+    @Autowired ConfigurationManager configurationManager;
+    @Autowired OrderServiceDocumentValidatorImpl orderServiceDocumentValidatorImpl;
+    @Autowired CustomerOrderDocumentValidatorImpl customerOrderDocumentValidatorImpl;
+    @Autowired
+    DocumentValidatorFactory documentValidatorFactory;
     @Override
     public String createOne(String collection, JSONObject document) throws Exception {
         // First Validate the JsonObject
-        DocumentValidatorFactory documentValidatorFactory = new DocumentValidatorFactoryImpl();
+
         documentValidatorFactory.validateDocument(collection,document);
         return null;
     }

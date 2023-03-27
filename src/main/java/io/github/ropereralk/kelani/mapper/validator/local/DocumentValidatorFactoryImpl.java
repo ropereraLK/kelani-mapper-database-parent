@@ -10,10 +10,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class DocumentValidatorFactoryImpl implements DocumentValidatorFactory{
 
-
+    @Autowired
     ConfigurationManager configurationManager;
     @Autowired
     OrderServiceDocumentValidatorImpl orderServiceDocumentValidatorImpl;
+    @Autowired
+    CustomerOrderDocumentValidatorImpl customerOrderDocumentValidatorImpl;
+    @Autowired
+    DbMapperDocumentValidatorImpl dbMapperDocumentValidatorImpl;
 
   @Override
     public boolean validateDocument(String collection, JSONObject document) throws Exception {
@@ -29,13 +33,13 @@ public class DocumentValidatorFactoryImpl implements DocumentValidatorFactory{
         switch (collection) {
 
         case CollectionsC.CUSTOMER_ORDER:
-                return new  CustomerOrderDocumentValidatorImpl();
+                return  customerOrderDocumentValidatorImpl;
 
         case CollectionsC.ORDER_SERVICE :
             return  orderServiceDocumentValidatorImpl;
 
         default:
-            return new DbMapperDocumentValidatorImpl();
+            return dbMapperDocumentValidatorImpl;
         }
     }
 

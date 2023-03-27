@@ -3,8 +3,10 @@ package io.github.ropereralk.kelani.mapper.validator.local;
 import io.github.ropereralk.kelani.mapper.beanCreation.ConfigurationManager;
 import io.github.ropereralk.kelani.mapper.exceptions.MapperValidationException;
 import org.json.simple.JSONObject;
+import org.springframework.stereotype.Component;
 
-class DbMapperDocumentValidatorImpl extends DocumentValidatorImpl {
+@Component
+public class DbMapperDocumentValidatorImpl extends DocumentValidatorImpl {
 
     @Override
     public boolean validateDocument(JSONObject document, ConfigurationManager configurationManager) {
