@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import static io.github.ropereralk.kelani.mapper.util.constants.Constants.DOT_NAME;
 
 public abstract class DocumentValidatorImpl implements DocumentValidator {
     @Autowired
@@ -18,7 +19,7 @@ public abstract class DocumentValidatorImpl implements DocumentValidator {
 
     public boolean validateCollection(String collection) throws Exception {
         try {
-            if (!(configurationManager.get(collection.concat(".name")) == null)) {
+            if (!(configurationManager.get(collection.concat(DOT_NAME)) == null)) {
                 return true;
             }
 
