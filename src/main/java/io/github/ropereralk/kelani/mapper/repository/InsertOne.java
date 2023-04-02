@@ -12,6 +12,7 @@ public class InsertOne {
     public void insert(String collection, JSONObject document) throws Exception {
 
         mongoConfiguration.mongoTemplate()
+
            .insert(document,collection);
     }
 }
