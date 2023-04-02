@@ -46,7 +46,7 @@ public class HealthController {
                 //mongoTemplate.insert(jsonObject,"Love");
                 //mongoTemplate.creat
 
-        JSONObject myvalue = dbMapper.findOne("$or","[{\"name\" : \"Alex\"},{\"name\" : \"bernie\"}]","students");
+        JSONObject myvalue = dbMapper.findOne("sName","Alex","students");
 
         return myvalue;
 
