@@ -34,19 +34,21 @@ public class HealthController {
     @Autowired OrderServiceDocumentValidatorImpl orderServiceDocumentValidatorImpl;
     @Autowired CustomerOrderDocumentValidatorImpl customerOrderDocumentValidatorImpl;
     @GetMapping("/health")
-    public String getHealth () throws Exception {
+    public JSONObject getHealth () throws Exception {
        // configurationManager.getCollectionList();
 
         // return this.payRoll.getEmployeeName();
 
-                JSONObject js = new JSONObject();
-                JSONParser parser = new JSONParser();
-                JSONObject jsonObject = (JSONObject) parser.parse(TEST_DOCUMENT1);
-                dbMapper.createOne("orderService",jsonObject);
+//                JSONObject js = new JSONObject();
+//                JSONParser parser = new JSONParser();
+//                JSONObject jsonObject = (JSONObject) parser.parse(TEST_DOCUMENT1);
+//                dbMapper.createOne("orderService",jsonObject);
                 //mongoTemplate.insert(jsonObject,"Love");
                 //mongoTemplate.creat
 
-                return "Db Mapper Service Up and Running";
+        JSONObject myvalue = dbMapper.findOne("$or","[{\"name\" : \"Alex\"},{\"name\" : \"bernie\"}]","students");
+
+        return myvalue;
 
 
     }
