@@ -12,6 +12,9 @@
 	<artifactId>kelani-mapper-database-parent</artifactId>
 	<version>v0.0.1-test</version>
 	<name>kelani-mapper-database-parent</name>
+	<packaging>jar</packaging>
+	<url>https://ropereralk.github.io</url>
+
 	<description>Database Mapper Library - Kelani</description>
 	<properties>
 		<java.version>17</java.version>
